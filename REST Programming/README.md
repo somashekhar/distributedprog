@@ -8,10 +8,10 @@ Types of APIs based on:
     *Use cases   : Database APIs, Operating System APIs, Remote APIs, Web APIs
 
 Web API Architecture styles or Specifications:
-    *Remote Procedure Call [RPC]
-    *Simple Object Access Protocol [SOAP]
-    *REpresentational State Transfer [REST]
-    *GraphQL
+    * Remote Procedure Call [RPC]
+    * Simple Object Access Protocol [SOAP]
+    * REpresentational State Transfer [REST]
+    * GraphQL
 
 HTTP:
 Underlying protocol used to transfer data. It would have a request and responses.
