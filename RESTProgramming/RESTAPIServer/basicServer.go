@@ -28,7 +28,7 @@ func AllStudents(w http.ResponseWriter, r *http.Request) {
 
 func handleHttpRequest() {
 	http.HandleFunc("/", homePage)
-	http.HandleFunc("/students", AllStudents)
+	http.HandleFunc("/student", AllStudents)
 	log.Fatal(http.ListenAndServe(":10000", nil))
 }
 

@@ -62,10 +62,11 @@ func updateStudentDetails(w http.ResponseWriter, r *http.Request) {
 	for index, existingStudent := range Students {
 		if existingStudent.RollNumber == key {
 			Students[index] = newStudent
+			json.NewEncoder(w).Encode(Students[index])
 		}
 	}
 
-	json.NewEncoder(w).Encode(Students)
+	//json.NewEncoder(w).Encode(Students)
 }
 
 func deleteStudentDetails(w http.ResponseWriter, r *http.Request) {
@@ -85,13 +86,13 @@ func deleteStudentDetails(w http.ResponseWriter, r *http.Request) {
 func handleHttpRequest() {
 	router := mux.NewRouter().StrictSlash(true)
 	router.HandleFunc("/", homePage)
-	router.HandleFunc("/students", returnAllStudents)
 
 	router.HandleFunc("/student", addNewStudentDetails).Methods("POST")
 	router.HandleFunc("/student/{RollNumber}", updateStudentDetails).Methods("PUT")
 	router.HandleFunc("/student/{RollNumber}", deleteStudentDetails).Methods("DELETE")
 
 	//Adding GET a single student here after DELETE, explore why ?
+	router.HandleFunc("/student", returnAllStudents)
 	router.HandleFunc("/student/{RollNumber}", returnSingleStudent)
 
 	log.Fatal(http.ListenAndServe(":10000", router))

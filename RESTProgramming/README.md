@@ -52,4 +52,4 @@ https://developer.mozilla.org/en-US/docs/Web/HTTP/Status
 https://golang.org/pkg/net/http/
 ```
 ## Golang
-* Can find packages at https://pkg.go.dev/ 
+* Can find packages at https://golang.org/pkg/ and https://pkg.go.dev/ (for third party packages)

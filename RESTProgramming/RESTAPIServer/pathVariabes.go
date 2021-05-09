@@ -39,7 +39,7 @@ func returnSingleStudent(w http.ResponseWriter, r *http.Request) {
 func handleHttpRequest() {
 	router := mux.NewRouter().StrictSlash(true)
 	router.HandleFunc("/", homePage)
-	router.HandleFunc("/students", returnAllStudents)
+	router.HandleFunc("/student", returnAllStudents)
 	router.HandleFunc("/student/{RollNumber}", returnSingleStudent)
 
 	log.Fatal(http.ListenAndServe(":10000", router))

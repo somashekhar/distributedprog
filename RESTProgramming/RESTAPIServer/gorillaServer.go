@@ -30,7 +30,7 @@ func handleHttpRequest() {
 	myRouter := mux.NewRouter().StrictSlash(true)
 
 	myRouter.HandleFunc("/", homePage)
-	myRouter.HandleFunc("/all", AllStudents)
+	myRouter.HandleFunc("/student", AllStudents)
 
 	log.Fatal(http.ListenAndServe(":10000", myRouter))
 }
